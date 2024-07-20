@@ -6,8 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import { clientRouter } from "../router/client-router.js";
 import { generalRouter } from "../router/general-router.js";
-import { managementRouter } from "../router/management-router.js";
-import { salesRouter } from "../router/sales-router.js";
+// import { managementRouter } from "../router/management-router.js";
+// import { salesRouter } from "../router/sales-router.js";
 export const app = express();
 
 app.use(express.json());
@@ -48,5 +48,5 @@ app.get("/", (req, res) => {
 
 app.use("/client", clientRouter);
 app.use("/general", generalRouter);
-app.use("/management", managementRouter);
-app.use("/sales", salesRouter);
+// app.use("/management", managementRouter);
+// app.use("/sales", salesRouter);

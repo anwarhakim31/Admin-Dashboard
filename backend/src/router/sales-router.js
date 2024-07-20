@@ -1,5 +1,3 @@
 import express from "express";
 
-const salesRouter = express.Router();
-
-export { salesRouter };
+export const salesRouter = express.Router();
