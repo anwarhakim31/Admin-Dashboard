@@ -7,14 +7,17 @@ import Sidebar from "./Sidebar";
 import { useGetUserQuery } from "../../redux/slices/apiSlice";
 
 const Layout = () => {
-  const isNonMobile = useMediaQuery("(min-width:600px)");
+  const isNonMobile = useMediaQuery("(min-width: 800px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-
   const userId = useSelector((state) => state.global.userId);
   const { data } = useGetUserQuery(userId);
 
   return (
-    <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100%">
+    <Box
+      display={isNonMobile && isSidebarOpen === true ? "flex" : "block"}
+      width="100%"
+      height="100%"
+    >
       <Sidebar
         user={data || {}}
         isNonMobile={isNonMobile}
@@ -22,7 +25,7 @@ const Layout = () => {
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
       />
-      <Box flexGrow={"1"}>
+      <Box flexGrow={"1"} overflow={"hidden"}>
         <Navbar
           user={data || {}}
           isSidebarOpen={isSidebarOpen}

@@ -6,7 +6,10 @@ import DashboardPage from "./pages/dashboard";
 import { useMemo } from "react";
 import { useSelector } from "react-redux";
 import { themeSettings } from "./theme";
+import { idID } from "@mui/material/locale";
 import ProductsPage from "./pages/products";
+import CustomersPage from "./pages/customers";
+import TransactionPage from "./pages/transaction";
 
 function App() {
   const mode = useSelector((state) => state.theme.mode);
@@ -24,6 +27,8 @@ function App() {
               />
               <Route path="/dashboard" element={<DashboardPage />} />
               <Route path="/products" element={<ProductsPage />} />
+              <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/transaction" element={<TransactionPage />} />
             </Route>
           </Routes>
         </ThemeProvider>

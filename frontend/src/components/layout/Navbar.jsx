@@ -119,7 +119,7 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen, user }) => {
               onClose={handleClose}
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
-              <MenuItem onClick={handleClose}></MenuItem>
+              <MenuItem onClick={handleClose}>Log Out</MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>
